@@ -1,0 +1,47 @@
+﻿@section Scripts{
+    <script src="~/js/usuario.js"></script>
+}
+
+@model EcommerceNexo.Models.Usuario
+
+<form id="frmEdit">
+    <input type="hidden" id="id" name="id" value="@Model?.Id" />
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input id="nome" class="form-control" type="text" value="@Model?.Nome"/>
+        <div id="txtFeedbackNome" class="invalid-feedback"></div>
+    </div>
+
+    <div>
+        <label for="email" class="form-label">Email</label>
+        <input id="email" class="form-control" type="text" value="@Model?.Email"/>
+        <div id="txtFeedbackEmail" class="invalid-feedback"></div>
+    </div>
+
+    <div>
+        <label for="senha" class="form-label">Senha</label>
+        <input id="senha" class="form-control" type="password"/>
+        <div id="txtFeedbackSenha" class="invalid-feedback"></div>
+    </div>
+
+    <div>
+        <label for="confirmacaoSenha" class="form-label">Confirmar Senha</label>
+        <input id="confirmacaoSenha" class="form-control" type="password" />
+        <div id="txtFeedbackConfirmacaoSenha" class="invalid-feedback"></div>
+    </div>
+
+    @if (User.IsInRole("admin"))
+    {
+        <div>
+            <label for="perfil" class="form-label">Perfil</label>
+            <select id="perfil" class="form-select">
+                <option value="cliente" selected="@(Model?.Perfil=="cliente")">Cliente</option>
+                <option value="admin" selected="@(Model?.Perfil=="admin")">Administrador</option>
+            </select>
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+

@@ -1,0 +1,28 @@
+﻿@model List<EcommerceNexo.Models.Usuario>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Data de criação</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Usuario usuario in Model)
+        {
+            <tr>
+                <td scope="row">@usuario.Id</td>
+                <td>@usuario.Nome</td>
+                <td>@usuario.Email</td>
+                <td>@usuario.DataCriacao.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@usuario.Id" class="btn btn-sm btn-primary">Editar</a>
+                    <button type="button" class="btn btn-sm btn-danger btn-delete" data-id="@usuario.Id">Excluir</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@section Styles{
+    <link href="~/css/login.css" rel="stylesheet"/>
+}
+
+@section Scripts{
+    <script src="~/js/auth.js"></script>
+}
+
+<div>
+    <form id="frmLogin">
+        <div id="loginError" class="alert alert-danger d-none"></div>
+        <div>
+            <label for="email" class="form-label">Email</label>
+            <input id="email" class="form-control" type="text" />
+        </div>
+        <div>
+            <label for="senha" class="form-label">Senha</label>
+            <input id="senha" class="form-control" type="password" />
+        </div>
+        <button id="btnLogin" class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+</div>

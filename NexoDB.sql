@@ -1,3 +1,6 @@
+
+
+
 DROP TABLE IF EXISTS itens_pedido;
 DROP TABLE IF EXISTS pedidos;
 DROP TABLE IF EXISTS itens_carrinho;
@@ -84,7 +87,6 @@ CREATE TABLE IF NOT EXISTS reviews(
 );
 /*INSERT INTO Categoria(Nome, Descricao)
 VALUES('Camisetas', 'camisetas masculinas e femininas');*/
-
 
 SELECT * FROM categorias;
 SELECT * FROM produtos; 
